@@ -2,6 +2,8 @@ package br.com.trilha.java.cursodp.investimento;
 
 import java.util.Random;
 
+import br.com.trilha.java.cursodp.Conta;
+
 public class Arrojado implements Investimento {
 	private Random random;
 

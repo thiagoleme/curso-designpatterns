@@ -2,7 +2,6 @@ package br.com.trilha.java.cursodp;
 
 import br.com.trilha.java.cursodp.investimento.Arrojado;
 import br.com.trilha.java.cursodp.investimento.Conservador;
-import br.com.trilha.java.cursodp.investimento.Conta;
 import br.com.trilha.java.cursodp.investimento.Investimento;
 import br.com.trilha.java.cursodp.investimento.Moderado;
 import br.com.trilha.java.cursodp.investimento.RealizadorDeInvestimentos;
