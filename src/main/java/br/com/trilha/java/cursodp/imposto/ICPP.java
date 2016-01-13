@@ -4,14 +4,22 @@ import br.com.trilha.java.cursodp.Orcamento;
 
 public class ICPP extends TemplateDeImpostoCondicional {
 
+	public ICPP(Imposto imposto) {
+		super(imposto);
+	}
+
+	public ICPP() {
+		super();
+	}
+
 	@Override
 	public double minimaTaxacao(Orcamento orcamento) {
-		return orcamento.getValor() * 0.05;
+		return orcamento.getValor() * 0.05 + calculaOutroImposto(orcamento);
 	}
 
 	@Override
 	protected double maximaTaxacao(Orcamento orcamento) {
-		return orcamento.getValor() * 0.07;
+		return orcamento.getValor() * 0.07 + calculaOutroImposto(orcamento);
 	}
 
 	@Override

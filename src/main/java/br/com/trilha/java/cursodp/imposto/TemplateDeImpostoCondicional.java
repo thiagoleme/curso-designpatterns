@@ -2,7 +2,15 @@ package br.com.trilha.java.cursodp.imposto;
 
 import br.com.trilha.java.cursodp.Orcamento;
 
-public abstract class TemplateDeImpostoCondicional implements Imposto {
+public abstract class TemplateDeImpostoCondicional extends Imposto {
+
+	public TemplateDeImpostoCondicional(Imposto imposto) {
+		super(imposto);
+	}
+
+	public TemplateDeImpostoCondicional() {
+		super();
+	}
 
 	@Override
 	public final double calcula(Orcamento orcamento) {

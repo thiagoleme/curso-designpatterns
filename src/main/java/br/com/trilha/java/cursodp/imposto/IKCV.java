@@ -5,14 +5,22 @@ import br.com.trilha.java.cursodp.Orcamento;
 
 public class IKCV extends TemplateDeImpostoCondicional {
 
+	public IKCV(Imposto imposto) {
+		super(imposto);
+	}
+
+	public IKCV() {
+		super();
+	}
+
 	@Override
 	protected double minimaTaxacao(Orcamento orcamento) {
-		return orcamento.getValor() * 0.06;
+		return orcamento.getValor() * 0.06 + calculaOutroImposto(orcamento);
 	}
 
 	@Override
 	protected double maximaTaxacao(Orcamento orcamento) {
-		return orcamento.getValor() * 0.10;
+		return orcamento.getValor() * 0.10 + calculaOutroImposto(orcamento);
 	}
 
 	@Override
