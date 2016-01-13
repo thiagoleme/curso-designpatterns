@@ -5,24 +5,30 @@ import java.util.Collections;
 import java.util.List;
 
 public class Orcamento {
-	private double valor;
+	protected double valor;
 	private List<Item> itens;
+	protected EstadoDoOrcamento estadoDoOrcamento;
 
 	public Orcamento(double valor) {
 		this.valor = valor;
 		this.itens = new ArrayList<>();
+		estadoDoOrcamento = new EmAprovacao();
 	}
 
 	public double getValor() {
 		return valor;
 	}
 
-	public void adicionaItem(Item item) {
-		itens.add(item);
+	public EstadoDoOrcamento getEstadoDoOrcamento() {
+		return estadoDoOrcamento;
 	}
 
 	public List<Item> getItens() {
 		return Collections.unmodifiableList(itens);
+	}
+
+	public void adicionaItem(Item item) {
+		itens.add(item);
 	}
 
 	public boolean existe(String nomeDoItem) {
@@ -31,5 +37,21 @@ public class Orcamento {
 				return true;
 		}
 		return false;
+	}
+
+	public void aplicaDescontoExtra() {
+		estadoDoOrcamento.aplicaDescontoExtra(this);
+	}
+
+	public void aprova() {
+		estadoDoOrcamento.aprova(this);
+	}
+
+	public void reprova() {
+		estadoDoOrcamento.reprova(this);
+	}
+
+	public void finaliza() {
+		estadoDoOrcamento.finaliza(this);
 	}
 }

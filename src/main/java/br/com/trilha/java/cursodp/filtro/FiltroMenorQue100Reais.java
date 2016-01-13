@@ -1,7 +1,9 @@
-package br.com.trilha.java.cursodp;
+package br.com.trilha.java.cursodp.filtro;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import br.com.trilha.java.cursodp.Conta;
 
 public class FiltroMenorQue100Reais extends Filtro {
 
